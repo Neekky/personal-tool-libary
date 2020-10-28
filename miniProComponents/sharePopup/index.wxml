@@ -1,0 +1,28 @@
+<!-- page/components/sharePopup/index.wxml -->
+<view bind:tap="onClickMask" style="padding-top: {{statusBarHeight + 15}}px" class="share__popup__wrapper {{!show ? 'weui-mask_hidden' : '' }}" wx:if="{{show}}">
+    <swiper wx:if="{{shareImages.length > 1}}" bind:animationfinish="onAnimationfinish" bind:transition="onTransition" bind:change="onChange" next-margin="200rpx" previous-margin="-70rpx" class="share-swiper">
+        <swiper-item class="share-swiper-item" wx:for="{{shareImages}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+            <view catch:tap="onSwiperTimeHandle" data-index="{{index}}" class="swiper-item-imageBox" style="transform: scale({{ratioList[index]}})">
+                <image mode="scaleToFill" class="swiper-item-image" src="{{item}}" />
+                <radio class="swiper-item-check" value="{{index}}" checked="{{checkIndexList[index]}}" color="#ff2244" />
+            </view>
+        </swiper-item>
+    </swiper>
+    <view class="share__popup__single" wx:else>
+        <image mode="aspectFill" src="{{shareImages[0]}}" class="swiper-item-imageBox" />
+    </view>
+    <view class="share__content" catch:tap="preventDefault">
+        <text class="content__title">邀请好友助力</text>
+        <text class="content__desc">抽奖码越多，中奖率越高</text>
+        <view class="content__share">
+            <button open-type="share" class="share__item share__item--margin">
+                <image class="item__icon" src="https://static.caibeike.com/i/d6a637cda1a08beba1ed4745b64e036c-E5qHQs-AAMwAAMhp1" />
+                <text class="item__text">微信好友</text>
+            </button>
+            <view class="share__item" bind:tap="onSave">
+                <image class="item__icon" src="https://static.caibeike.com/i/26bdfe0d5701207766778934090e75c5-nzggq2-bigwbighp1" />
+                <text class="item__text">保存海报</text>
+            </view>
+        </view>
+    </view>
+</view>

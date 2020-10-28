@@ -1,0 +1,119 @@
+/* page/components/sharePopup/index.wxss */
+.share__popup__wrapper {
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+    transition: all .3s ease-in
+}
+
+.weui-mask_hidden {
+    opacity: 0;
+    transform: scale3d(1, 1, 0)
+}
+
+.share-swiper {
+    height: 64vh;
+}
+
+.share-swiper-item {
+    margin-left: 100rpx;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+
+.share__popup__single {
+    display: flex;
+    justify-content: center;
+}
+
+.swiper-item-imageBox {
+    position: relative;
+    height: 63vh;
+    width: 77vw;
+    border-radius: 12rpx;
+    overflow: hidden;
+    transition: transform 0.05s linear;
+}
+
+.swiper-item-image {
+    height: 100%;
+    width: 100%;
+}
+
+.swiper-item-check {
+    position: absolute;
+    right: 24rpx;
+    top: 30rpx;
+    z-index: 10;
+}
+
+.share__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 320rpx;
+    border-radius: 20rpx 20rpx 0 0;
+    background-color: #fff;
+}
+
+.content__title {
+    margin-top: 42rpx;
+    font-size: 32rpx;
+    font-weight: 600;
+    color: #000000;
+    line-height: 1;
+}
+
+.content__desc {
+    margin-top: 12rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 330rpx;
+    padding: 10rpx;
+    background: #F5F5F5;
+    border-radius: 25rpx;
+    font-size: 26rpx;
+    font-weight: 400;
+    color: #444444;
+    line-height: 1;
+}
+
+.content__share {
+    margin-top: 30rpx;
+    display: flex;
+}
+
+.share__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.share__item--margin {
+    margin-right: 124rpx;
+}
+
+.item__icon {
+    width: 88rpx;
+    height: 88rpx;
+}
+
+.item__text {
+    margin-top: 10rpx;
+    font-size: 24rpx;
+    font-weight: 400;
+    color: #757575;
+    line-height: 1;
+}
